@@ -1,5 +1,5 @@
 import React from 'react';
-import {Comment, Form, Button, Header} from 'semantic-ui-react'
+import {Comment, Form, Button, Header, Icon} from 'semantic-ui-react'
 
 
 import human from "./human.png"
@@ -7,7 +7,7 @@ import human from "./human.png"
 class Comments extends React.Component{
 
   render(){
-    return(    <Comment.Group>
+    return(    <Comment.Group style = {{marginLeft :"550px"} }>
       <Header as='h3' dividing>
         Comments
       </Header>
@@ -32,6 +32,8 @@ class Comments extends React.Component{
         <Form.TextArea />
         <Button content='Add Reply' labelPosition='left' icon='edit' primary />
       </Form>
+
+    
     </Comment.Group>)
   }
 }
