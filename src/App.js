@@ -1,70 +1,63 @@
-import React from 'react';
-import {Button, Image, Divider, Header, Icon, Grid} from 'semantic-ui-react'
+import React from "react";
+import { Button, Image, Divider, Header, Icon, Grid } from "semantic-ui-react";
 
-import Comments from "./comment.js"
+import Comments from "./comment.js";
+import Buttons from "./buttons.js";
 
-import sb from "./sb.jpg"
-
+import sb from "./sb.jpg";
 
 function App() {
   return (
     <div>
-    <Grid centered>
-    <Grid.Row>
-    <Image src = {sb} centered />
-    </Grid.Row>
+      <Grid centered>
+        <Grid.Row>
+          <Image src={sb} centered />
+        </Grid.Row>
+        <Grid.Row>
+          <Buttons />
+        </Grid.Row>
+      </Grid>
+      <br />
 
-      <Grid.Row>
+      <Divider horizontal>
+        <Header as="h4">
+          <Icon name="comment" />
+          Leave the Comment
+        </Header>
+      </Divider>
 
-  <Button
-    color='red'
-    content='Like'
-    icon='heart'
-    label={{ basic: true, color: 'red', pointing: 'left', content: '0' }}
-  />
-  <Button
-    basic
-    color='blue'
-    content='Share'
-    icon='fork'
-    label={{
-      as: 'a',
-      basic: true,
-      color: 'blue',
-      pointing: 'left',
-      content: '0',
-    }}
-  />
-
-    </Grid.Row>
-</Grid>
-<br/>
-
-    <Divider horizontal>
-      <Header as='h4'>
-        <Icon name='comment' />
-        Leave the Comment
-      </Header>
-    </Divider>
-
-  <Comments />
-  <Divider horizontal>
-    <Header as='h4'>
-      <Icon name='linkify' />
-      Contact Me
-    </Header>
-  </Divider>
-  <br/>
-  <div>
-  <Grid centered>
-  <Button circular color='facebook' icon='facebook' />
-  <Button circular color='twitter' icon='twitter' />
-  <Button circular color='youtube' icon='youtube' />
-  <Button circular color='google plus' icon='google plus' />
-  </Grid>
-  </div>
-
-
+      <Comments />
+      <Divider horizontal>
+        <Header as="h4">
+          <Icon name="linkify" />
+          Contact Me
+        </Header>
+      </Divider>
+      <br />
+      <div>
+        <Grid centered>
+          <Button
+            circular
+            color="facebook"
+            icon="facebook"
+            onClick={() =>
+              window.open(
+                "https://www.facebook.com/profile.php?id=100009683314212"
+              )
+            }
+          />
+          <Button circular color="twitter" icon="twitter" />
+          <Button
+            circular
+            color="instagram"
+            icon="instagram"
+            onClick={() =>
+              window.open("https://www.instagram.com/l_ji_woon20/")
+            }
+          />
+          <Button circular color="google plus" icon="google plus" />
+        </Grid>
+      </div>
     </div>
   );
 }
