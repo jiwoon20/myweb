@@ -46,7 +46,12 @@ function App() {
               )
             }
           />
-          <Button circular color="twitter" icon="twitter" />
+          <Button
+            circular
+            color="twitter"
+            icon="twitter"
+            onClick={() => alert("준비중입니다.")}
+          />
           <Button
             circular
             color="instagram"
@@ -55,7 +60,12 @@ function App() {
               window.open("https://www.instagram.com/l_ji_woon20/")
             }
           />
-          <Button circular color="google plus" icon="google plus" />
+          <Button
+            circular
+            color="google plus"
+            icon="google plus"
+            onClick={() => alert("준비중입니다.")}
+          />
         </Grid>
       </div>
     </div>

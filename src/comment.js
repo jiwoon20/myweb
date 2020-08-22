@@ -1,5 +1,6 @@
 import React from "react";
 import { Comment, Form, Button, Header, Icon } from "semantic-ui-react";
+import moment from "moment";
 
 import human from "./human.png";
 
@@ -10,9 +11,9 @@ function SingleComment(detail) {
       <Comment.Content>
         <Comment.Author as="a">visitor</Comment.Author>
         <Comment.Metadata>
-          <div>2020</div>
+          <div>{detail.info.time}</div>
         </Comment.Metadata>
-        <Comment.Text>{detail.content}</Comment.Text>
+        <Comment.Text>{detail.info.content}</Comment.Text>
       </Comment.Content>
     </Comment>
   );
@@ -23,6 +24,7 @@ class Comments extends React.Component {
     super();
     this.state = {
       inputContent: "",
+      inputTime: "",
       commentslist: [],
     };
   }
@@ -34,7 +36,9 @@ class Comments extends React.Component {
           Comments
         </Header>
 
-        {this.state.commentslist.map(comments => <SingleComment content = {comments}/> )}
+        {this.state.commentslist.map((comments) => (
+          <SingleComment info={comments} />
+        ))}
 
         <Form reply>
           <Form.TextArea
@@ -47,14 +51,26 @@ class Comments extends React.Component {
             labelPosition="left"
             icon="edit"
             primary
-            onClick={() =>
-              this.setState((prevState) => {
-                return {
-                  commentslist: [...prevState.commentslist, this.state.inputContent],
-                  inputContent: ""
-                };
-              })
-            }
+            onClick={() => {
+              if (this.state.inputContent != "") {
+                this.setState((prevState) => {
+                  return {
+                    commentslist: [
+                      ...prevState.commentslist,
+                      {
+                        content: this.state.inputContent,
+                        time: moment().format(
+                          "YYYY년 MM월 DD일 HH시 mm분 ss초"
+                        ),
+                      },
+                    ],
+                    inputContent: "",
+                  };
+                });
+              } else {
+                alert("내용을 입력해주세요");
+              }
+            }}
           />
         </Form>
       </Comment.Group>
