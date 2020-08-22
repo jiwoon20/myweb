@@ -25,7 +25,6 @@ class Buttons extends React.Component{
                 })}
               />
               <Button
-                basic
                 color="blue"
                 content="Share"
                 icon="fork"

@@ -8,7 +8,7 @@ import sb from "./sb.jpg";
 
 function App() {
   return (
-    <div>
+    <div style = {{backgroundColor : "black"}}>
       <Grid centered>
         <Grid.Row>
           <Image src={sb} centered />
@@ -20,7 +20,7 @@ function App() {
       <br />
 
       <Divider horizontal>
-        <Header as="h4">
+        <Header as="h4" style = {{color : "white"}}>
           <Icon name="comment" />
           Leave the Comment
         </Header>
@@ -28,7 +28,7 @@ function App() {
 
       <Comments />
       <Divider horizontal>
-        <Header as="h4">
+        <Header as="h4" style = {{color : "white"}}>
           <Icon name="linkify" />
           Contact Me
         </Header>

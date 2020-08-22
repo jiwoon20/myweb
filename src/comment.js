@@ -9,11 +9,11 @@ function SingleComment(detail) {
     <Comment>
       <Comment.Avatar src={human} />
       <Comment.Content>
-        <Comment.Author as="a">visitor</Comment.Author>
-        <Comment.Metadata>
-          <div>{detail.info.time}</div>
+        <Comment.Author as="a" style = {{color : "white"}}> visitor </Comment.Author>
+        <Comment.Metadata >
+          <div style = {{color : "white"}}>{detail.info.time}</div>
         </Comment.Metadata>
-        <Comment.Text>{detail.info.content}</Comment.Text>
+        <Comment.Text style = {{color : "white"}}>{detail.info.content}</Comment.Text>
       </Comment.Content>
     </Comment>
   );
@@ -32,7 +32,7 @@ class Comments extends React.Component {
   render() {
     return (
       <Comment.Group style={{ marginLeft: "550px" }}>
-        <Header as="h3" dividing>
+        <Header as="h3" dividing style = {{color : "white"}}>
           Comments
         </Header>
 
