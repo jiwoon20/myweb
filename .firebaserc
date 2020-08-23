@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "giant-rabbit"
+    "default": "giant-rabbit",
+    "stging": "giant-rabbit",
+    "staging": "giant-rabbit"
   }
 }

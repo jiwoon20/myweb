@@ -8,7 +8,7 @@ import sb from "./sb.jpg";
 
 function App() {
   return (
-    <div style = {{backgroundColor : "blue"}}>
+    <div style = {{backgroundColor : "black"}}>
       <Grid centered>
         <Grid.Row>
           <Image src={sb} centered />
